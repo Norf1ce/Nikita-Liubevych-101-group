@@ -1,0 +1,37 @@
+// Любевич Нікіта 101 група (19 у списку)
+
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    float x, a, e;
+    float term, sum = 0;
+    int k = 0, n = 0;
+
+    printf("Введіть x, a, e: ");
+    scanf("%f %f %f", &x, &a, &e);
+
+    float b = log(a + x); // логарифм
+    float c = 1;          // (ln(a + x))^(2k)
+    float d = 1;          // 2^k
+    float z = 1;          // k!
+
+    term = c / (d + z);
+
+    while (fabs(term) > e) {
+        sum += term;
+        n++;
+
+        k++;
+        c = c * b * b;  // (ln(a + x))^(2k)
+        d = d * 2;      // 2^k
+        z = z * k;      // k!
+
+        term = c / (d + z);
+    }
+
+    printf("Сума = %.6f\n", sum);
+    printf("Кількість доданків = %d\n", n);
+
+    return 0;
+}
