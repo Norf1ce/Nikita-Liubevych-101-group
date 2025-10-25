@@ -1,0 +1,15 @@
+// Любевич Нікіта 101 група (19 у списку)
+
+#include <stdio.h>
+
+int main() {
+    float dob = 1; 
+    int i;
+
+    for (i = 10; i <= 100; i++) {
+        dob = dob * (float)(i + 1) / (i - 2); 
+    }
+
+    printf("Добуток = %f\n", dob); 
+    return 0;
+}
